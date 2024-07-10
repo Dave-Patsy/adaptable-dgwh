@@ -23,7 +23,9 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/todos', todosRouter);
 
 app.get('/test',(req,res)=>{
-  res.send(req.headers.origin);
+  const origin =
+    req.headers.origin || req.headers.referer || "Origin not found";
+  res.send(`Request Origin: ${origin}`);
 })
 
 
