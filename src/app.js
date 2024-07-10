@@ -16,5 +16,9 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 // Routes
 app.use('/todos', todosRouter);
 
+app.get('/test',(req,res)=>{
+  res.send(req.headers.origin);
+})
+
 
 module.exports = app;
