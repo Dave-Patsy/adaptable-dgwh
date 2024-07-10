@@ -25,7 +25,7 @@ app.use('/todos', todosRouter);
 app.get('/test',(req,res)=>{
   const origin =
     req.headers.origin || req.headers.referer || "Origin not found";
-  res.send(`Request Origin: ${origin}`);
+  res.json(`Request Origin: ${origin}`);
 })
 
 
